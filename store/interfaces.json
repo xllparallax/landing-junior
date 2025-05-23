@@ -1,0 +1,7 @@
+{
+  "landing-junior": {
+    "component": "Landing",
+    "composition": "children",
+    "allowed": "*"
+  }
+}
