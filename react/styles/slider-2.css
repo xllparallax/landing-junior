@@ -1,0 +1,56 @@
+.text {
+  font-size: 0.95rem;
+  font-weight: 900;
+  font-weight: bold;
+  color: #dc2626;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .text {
+    font-size: 1.5rem;
+  }
+}
+
+.text::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 2rem;
+  width: 6.5rem;
+  height: 3px;
+  background-color: #dc2626;
+}
+
+@media (min-width: 1024px) {
+  .text::before {
+    left: 3.5rem;
+    width: 9.5rem;
+    height: 3px;
+  }
+}
+
+.contentPostConttainer {
+  position: relative;
+  width: 45%;
+  margin-left: 10rem;
+}
+
+@media (min-width: 1024px) {
+  .contentPostConttainer {
+    margin-left: 14rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .tilePost {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tilePost {
+    font-size: 1.5rem;
+  }
+}

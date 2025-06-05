@@ -1,0 +1,81 @@
+.containerJuju {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .containerJuju {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+}
+
+.camisetasOficialesContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .camisetasOficialesContainer {
+    padding: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .camisetasOficialesContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    padding-top: 8rem;
+  }
+}
+
+.showMore {
+  width: 10rem;
+  font-size: 1.25rem;
+  background: #00309b;
+  color: #ffff;
+  border: none;
+  padding: 1.5rem;
+  padding-block: 1rem;
+  border-radius: 100vh;
+  bottom: 0;
+}
+
+.juniorLogo {
+  position: absolute;
+  z-index: 99;
+  bottom: -26.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.juniorLogo img {
+  width: 5rem;
+}
+
+@media (min-width: 768px) {
+  .juniorLogo {
+    width: 100%;
+    bottom: auto;
+    margin-top: 1rem;
+  }
+}
+
+.juju {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .juju {
+    display: initial;
+    width: 100%;
+    height: 100%;
+  }
+}

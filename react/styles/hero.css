@@ -1,0 +1,11 @@
+.heroBannerContainer {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.heroBannerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}

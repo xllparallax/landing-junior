@@ -1,0 +1,41 @@
+.autosliderContainer {
+  width: 100%;
+  overflow: hidden;
+  background: #f8f9fa;
+  padding: 1rem 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.autosliderTrack {
+  display: inline-flex;
+  align-items: center;
+  animation: slide 60s linear infinite;
+  gap: 2rem;
+}
+
+.autosliderContainer:hover .autosliderTrack {
+  animation-play-state: paused;
+}
+
+.sliderItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ff0000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-style: italic;
+}
+
+.starDivider {
+  color: #ff0000;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 1rem;
+  padding-left: 2rem;
+}

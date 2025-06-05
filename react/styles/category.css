@@ -1,0 +1,491 @@
+.categorySection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  /* background-image: url('../public/bg-category-sec.webp'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 -19rem;
+}
+
+.categorySection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0.95;
+}
+
+.categoryContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.categoryTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: gray;
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.categoryTitle span {
+  color: #ff0000;
+}
+
+.categoryDescription {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: gray;
+}
+
+.categoryGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.categoryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 18rem;
+  height: 20rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.categoryItem:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.categoryItemRed {
+  composes: categoryItem;
+}
+
+.categoryItemRed .categoryBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/arquivos/rectangle-8983.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 2rem;
+  z-index: 1;
+}
+
+.categoryItemRed:hover .categoryName p {
+  color: #ff0000;
+  transition: color 0.3s ease-in-out;
+}
+
+.categoryItemRed .categoryName:hover {
+  border: 1px solid #ff0000;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.categoryItemBlue .categoryName:hover {
+  border: 1px solid #00309b;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.categoryItemBlue {
+  composes: categoryItem;
+}
+
+.categoryItemBlue .categoryBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/arquivos/rectangle 8983-blue.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 2rem;
+  z-index: 1;
+}
+
+.categoryItemBlue:hover .categoryName p {
+  color: #00309b;
+  transition: color 0.3s ease-in-out;
+}
+
+.categoryBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.categoryImage {
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.categoryName {
+  position: relative;
+  z-index: 3;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
+  margin: 0;
+}
+
+.categoryName p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: gray;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 768px) {
+  .categoryTitle {
+    font-size: 2rem;
+  }
+
+  .categoryGrid {
+    gap: 1rem;
+  }
+
+  .categoryItem {
+    width: 15rem;
+    height: 18rem;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 480px) {
+  .categorySection {
+    padding: 3rem 0.5rem;
+    padding-bottom: 0.5rem;
+    gap: 2rem;
+    background-image: none;
+    background-color: #f5f5f5;
+  }
+
+  .categorySection::before {
+    display: none;
+  }
+
+  .categoryTitle {
+    font-size: 1.8rem;
+    color: #333;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .categoryDescription {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .categoryGrid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .categoryItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 120px;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .categoryItem:hover {
+    transform: scale(1.02);
+  }
+
+  .categoryItemRed .categoryBg,
+  .categoryItemBlue .categoryBg {
+    border-radius: 0;
+    background-image: url('/arquivos/image 13.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .categoryItemRed .categoryBg {
+    background-color: #dc2626;
+    background-blend-mode: overlay;
+  }
+
+  .categoryItemBlue .categoryBg {
+    background-color: #2563eb;
+    background-blend-mode: overlay;
+  }
+
+  .categoryItemRed:hover,
+  .categoryItemBlue:hover {
+    border: none;
+  }
+
+  .categoryItemRed:hover .categoryName p,
+  .categoryItemBlue:hover .categoryName p {
+    color: white;
+  }
+
+  .categoryImage {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    left: auto;
+    transform: translateY(-50%);
+    width: auto;
+    height: 80%;
+    object-fit: contain;
+  }
+
+  .categoryName {
+    position: relative;
+    z-index: 3;
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+    padding: 0 2rem;
+    margin: 0;
+  }
+
+  .categoryName p {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+  }
+}
+
+/* Extra small mobile */
+@media screen and (max-width: 320px) {
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+
+  .categoryDescription {
+    font-size: 0.8rem;
+  }
+
+  .categoryItem {
+    height: 100px;
+  }
+
+  .categoryName p {
+    font-size: 1.2rem;
+  }
+
+  .categoryImage {
+    right: 1rem;
+    height: 70%;
+  }
+}
+
+/* .categorySectionBg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  background-image: url('../public/bg-category-sec.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 -19rem;
+}
+
+.categorySectionBg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0.95;
+}
+
+.categoryContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.categoryTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: gray;
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.categoryTitle span {
+  color: #ff0000;
+}
+
+.categoryDescription {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: gray;
+}
+
+.categoryGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .categoryTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+
+  .categoryDescription {
+    font-size: 1rem;
+  }
+}
+
+.categoryItemRed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 18rem;
+  height: 20rem;
+  background-image: url('/arquivos/rectangle-8983.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 2rem;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.categoryItemRed:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid #ff0000;
+}
+
+.categoryItemRed:hover .categoryName p {
+  color: #ff0000;
+  transition: color 0.3s ease-in-out;
+}
+
+.categoryItemBlue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 18rem;
+  height: 20rem;
+  background-image: url('/arquivos/rectangle 8983-blue.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 2rem;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.categoryItemBlue:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid #00309b;
+}
+
+.categoryItemBlue:hover .categoryName p {
+  color: #00309b;
+  transition: color 0.3s ease-in-out;
+}
+
+.categoryImage {
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.categoryName {
+  position: relative;
+  z-index: 2;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
+  margin: 0;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.categoryName p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: gray;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+} */

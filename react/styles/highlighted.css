@@ -1,0 +1,62 @@
+.highlightedContent {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlightedSubtitle {
+  font-style: italic;
+  text-transform: uppercase;
+  opacity: 0.9;
+  font-size: 0.85rem;
+}
+
+.highlightedArrow {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.highlightedTitle {
+  color: #e50914; /* Rojo Junior */
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: bold;
+}
+
+.highlightedDescription {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.highlightedButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.highlightedButton:hover {
+  background-color: #c10710;
+}
+
+.arrowIcon {
+  font-size: 1rem;
+}
