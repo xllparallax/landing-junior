@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import React from 'react'
+import React, { useState } from 'react'
+
 import styles from '../styles/slider.css'
 
 interface SlideData {
@@ -21,10 +21,6 @@ export function Slider({ slides }: { slides: SlideData[] }) {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? slides.length - 1 : prevIndex - 1
     )
-  }
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
   }
 
   return (
@@ -62,7 +58,7 @@ export function Slider({ slides }: { slides: SlideData[] }) {
       </div>
 
       <button
-        className={`${styles.navButton} ${styles.prevButton}`}
+        className={`${styles.navButtonSlider} ${styles.prevButtonSlider}`}
         onClick={prevSlide}
         aria-label="Anterior"
       >
@@ -72,7 +68,7 @@ export function Slider({ slides }: { slides: SlideData[] }) {
       </button>
 
       <button
-        className={`${styles.navButton} ${styles.nextButton}`}
+        className={`${styles.navButtonSlider} ${styles.nextButtonSlider}`}
         onClick={nextSlide}
         aria-label="Siguiente"
       >
@@ -80,19 +76,6 @@ export function Slider({ slides }: { slides: SlideData[] }) {
           <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
         </svg>
       </button>
-
-      <div className={styles.dotsContainer}>
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`${styles.dot} ${
-              index === currentIndex ? styles.dotActive : ''
-            }`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Ir a slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </div>
   )
 }

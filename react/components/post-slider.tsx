@@ -1,149 +1,108 @@
 import React, { useEffect, useRef, useState } from 'react'
+
 import styles from '../styles/post-slider.css'
-// import junuiorTuPapa from '../public/Group 1000002303.png'
-// import diagonal from '../public/Group 1000002331 (1).png'
-// import diagonalMobile from '../public/Group 1000002315.png'
-// import title from '../public/Title.png'
 
 export function PostSlider() {
-  const carouselRef = useRef<any>(null)
+  const carouselRef = useRef<HTMLDivElement>(null)
   const autoScrollRef = useRef<any>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const newsItems = [
     {
       id: 1,
-      link: 'https://www.instagram.com/reel/DJF57V9tuqU/?igsh=dmN3cmNtdTJ2NWh0',
+      link:
+        'https://www.instagram.com/reel/DKa_mxnt9AI/?igsh=MXFtZjhzMmI2cXJrbw==',
       title:
-        'Junior FC on Instagram: "¡QUE EL METRO SEA UNA CALDERA!🔥 🎥| Aquí, las declaraciones de nuestro capitán Carlos Bacca y nuestro DT César Farías, previo al encuentro ante América de Cali. #VamosJunior"',
-      date: '15/04/25',
+        'Junior FC on Instagram: "🎥| UNA TARDE EN EL ROMELIO VOL 2.¡NOS SEGUIMOS PREPARANDO! 💪🔥 #VamosJunior"',
+      date: '3/06/25',
       image:
-        'https://scontent.cdninstagram.com/v/t51.71878-15/491421683_1075595757767862_2455604494707888759_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=1-7&_nc_sid=18de74&_nc_ohc=zaekE5bnMdoQ7kNvwEhWIOy&_nc_oc=Adn9J1Zouu5_IcAP0EWgX8jbkjFEqpIOqskZTuNyu7oHzKZDpIhprV5DWd70q2qgRs4&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Es3Gc6EnkF8UNuM7t2ksxg&oh=00_AfKX8qYQw2qd3lTvugyjWmKIVXUQh1CdbRxG3C4eeYkURA&oe=6839F457',
+        'https://scontent.cdninstagram.com/v/t51.71878-15/503301376_9653544508106744_9001201975109345272_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=105&ig_cache_key=MzY0NjUwNjU4OTg1OTg2MDQ4OA%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjY0MHgxMTM2LnNkciJ9&_nc_ohc=wXYEvUm3VOkQ7kNvwFeWEsD&_nc_oc=AdnzmYortrYDanYAINf1OfVdpUeU4hPt1x2FeS4BkX_DIcpf3qwxivgPVYRXOO23HCc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=K9yVrpLlAOhv9XRVuV9ToA&oh=00_AfOLCrI4A49OfttGJNpQL9IOQSh68GUe8rwtFvEvfxqL2A&oe=6847C270',
       description: '(Espacio para agregar descripción)',
       type: 'basketball',
     },
     {
       id: 2,
       link:
-        'https://www.instagram.com/p/DJFw9kCNn8q/?igsh=eG1wcjhpeG1kcGxx&img_index=1',
+        'https://www.instagram.com/p/DKaLhQyRuQz/?img_index=4&igsh=YmRkMXNhb2R6N2gw',
       title:
-        'Junior FC on Instagram: "¿Te lo vas a perder? @jordan_barrera10 😎 #VamosJunior"',
-      date: '15/04/25',
+        'Junior FC on Instagram: "📸| PRIMER ENTRENAMIENTO DEL DÍA ✅ #VamosJunior"',
+      date: '02/06/25',
       image:
-        'https://scontent.cdninstagram.com/v/t51.75761-15/491447120_18510742807044049_2044262314439208816_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=1-7&_nc_sid=18de74&_nc_ohc=eMfCsNfaF60Q7kNvwFLHWFR&_nc_oc=Adkqk0jw1aDFf9GXLfHqFr8DvRGKB26ss2gA9okd-bDEb7oIFOBU1gvYelLcVvy0FY8&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rqH0JOH1OkO0la2zG9Lrsg&oh=00_AfIem99ypzJZFCHsbuBedeyzPiW5okwOcqLvTYSRtTSUDg&oe=683A4228',
+        'https://scontent.cdninstagram.com/v/t51.75761-15/502756599_18517155523044049_342359563379060770_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&_nc_cat=101&ccb=1-7&_nc_sid=18de74&_nc_ohc=ZyuuxECySXEQ7kNvwEBJme-&_nc_oc=AdkLRtPDVrFm8_DZ9vdKmyPM1jcz6wCrhA_3lgpkZt_0d7RUpwxnPowNG7yz3le5ea0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=O-Gsu9fT_7rDj35E2sPACA&oh=00_AfNjnGDsEkoNr_56Wkc5z1znl2RtGjxedegqs89yTYiKQA&oe=6847D0CC',
       description: '(Espacio para agregar descripción)',
       type: 'cheerleader',
     },
     {
-      id: 4,
-      link:
-        'https://www.instagram.com/p/DJAoSJSNbYi/?igsh=NXEybGlvZHkzbQ%3D%3D',
+      id: 3,
+      link: 'https://www.instagram.com/p/DKZ9aUUt_Ma/?igsh=cm5mYzBld3RwOG9x',
       title:
-        'Junior FC on Instagram: "¡BENEFICIOS DE LA MEMBRESÍA! ✈️ #VamosJunior"',
-      date: '15/04/25',
+        'Junior FC on Instagram: "¡LA SEXTA ESTRELLA BRILLÓ! ⭐ Un día como hoy, en 2010, ¡la fiesta fue total en Barranquilla! ¿Hincha tiburón, cómo celebraste ese título? 👇 ¡Te leemos en los comentarios! #VamosJunior"',
+      date: '02/06/25',
       description: '(Espacio para agregar descripción)',
       image:
-        'https://scontent.cdninstagram.com/v/t51.75761-15/494114167_18510438466044049_8966066894016187523_n.jpg?stp=c269.0.808.808a_dst-jpg_e35_s640x640_tt6&_nc_cat=106&ccb=1-7&_nc_sid=18de74&_nc_ohc=mEqx3VDnWTAQ7kNvwE483qk&_nc_oc=Adlv686ktsR65SJsa4UlKtq_XSk3D13jG-zpwSxitO4jPhxKdHX-jntbV8l23yoNLdY&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=ZIeUFHDCeoF6gop9GtH1Gw&oh=00_AfIavY5ikxuzyVJiVERp3ZO1k0ODkxF3PE-5VfC2yOCnoA&oe=683A46A8',
+        'https://scontent.cdninstagram.com/v/t51.75761-15/503287244_18517132699044049_6956728004348934425_n.jpg?stp=c269.0.808.808a_dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=1-7&_nc_sid=18de74&_nc_ohc=mh0NysEb77gQ7kNvwFYuhfC&_nc_oc=AdlKheGGO4Qn3771v-LZRRUnqAwdTjEH9xG85Kvy7ERKuoVsjZwzT6o3ft4QctSIP7w&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=DIeIfXj1-Ut2Q3yXKJIKOw&oh=00_AfOLDm-qhrPJhABao4VHT1CoQuK9K7Y-ITOu2MXfFNycZw&oe=6847D3C3',
+      type: 'mascot',
+    },
+    {
+      id: 4,
+      link: 'https://www.instagram.com/reel/DKV5E-Itshy/?igsh=YXBzaWZ3Y3Z4eDNw',
+      title: 'Junior FC on Instagram: "Eterno ❤ #VamosJunior"',
+      date: '01/06/25',
+      description: '(Espacio para agregar descripción)',
+      image:
+        'https://scontent.cdninstagram.com/v/t51.75761-15/502669599_18516820810044049_3048400169896460690_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=108&ig_cache_key=MzY0NTA3MDUwMzY3MzUxNDA5OA%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEyOTB4MjI5NC5zZHIifQ%3D%3D&_nc_ohc=W3wr9AatIhQQ7kNvwFsrWSv&_nc_oc=AdlN8pnZbs-f12o10N-CMqmrHHK6Q43kr5TWtWrCJJbHLFYqADX_vKY6zw-Ap3QE7vk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=8siBjsRhLbBD19nAR3G-HQ&oh=00_AfOg5aY7Hp-oKA8B9MHywphfMhUJemzia4ohB8oq7sz94Q&oe=6847BA3E',
       type: 'mascot',
     },
     {
       id: 5,
-      link:
-        'https://www.instagram.com/p/DJAQhxmxdD1/?igsh=a3Vpc3NrcnVuN3Ay&img_index=1',
+      link: 'https://www.instagram.com/reel/DKVivr5vOti/?igsh=ZnJ2enExZzM3aHI=',
       title:
-        'Junior FC on Instagram: "📸| ¡INICIAMOS LA SEMANA CON TODO! 🔥💪#VamosJunior"',
-      date: '15/04/25',
+        'Junior FC on Instagram: "🦈⚽¡Sobre el final del primer tiempo, Jhonier Guerrero se inventó una gran jugada, entró al área y remató con potencia para marcar el empate de Junior ante Tolima! #LALIGAxWIN"',
+      date: '01/06/25',
       description: '(Espacio para agregar descripción)',
       image:
-        'https://scontent.cdninstagram.com/v/t51.75761-15/491453414_18510415246044049_7444491490968553860_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=1-7&_nc_sid=18de74&_nc_ohc=kSrzK6axYwIQ7kNvwF-u4m3&_nc_oc=AdnVmAW-So9hYNV1iNcLJS0ZTxrRwxrVdVoz38lLXyQn_DSdg-uir71RwG8EmF8MOCY&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=XyidxqfSvOYctxLVGV17Zg&oh=00_AfJ0u_uJeZkHmFxbnH4U1cXB8R7Z1cuE6w-dxLsqyWZydw&oe=683A5308',
+        'https://scontent.cdninstagram.com/v/t51.75761-15/501118193_18502718719017624_2475798290886278503_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=110&ig_cache_key=MzY0NDk3MjI4Mzk2MjY0OTQ0Mg%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjYwNHgxMDc0LnNkciJ9&_nc_ohc=sKwIS9E3S14Q7kNvwErXanm&_nc_oc=AdnHwz7sFkgPOUub7Bq-zpVdI6-LLDDdKb9aU0KGZWKIhiaFujSZLYcq-6RIk_7KiRg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=8siBjsRhLbBD19nAR3G-HQ&oh=00_AfN85afpY0LtRhdjj0dubgjTLPmp3d0AV-b9pGpWoFqkfA&oe=6847CB01',
       type: 'mascot',
     },
     {
       id: 6,
       link:
-        'https://www.instagram.com/reel/DI7PIXGxp3n/?igsh=MWxwMG1paTA2ZDF0dA%3D%3D',
-      title:
-        'Junior FC on Instagram: "📸| ¡ENTRENAMIENTO EN IMÁGENES! #VamosJunior"',
-      date: '15/04/25',
+        'https://www.instagram.com/p/DKVVdCzRbp8/?img_index=4&igsh=MW44bGEzNGhhdDVk',
+      title: 'Junior FC on Instagram: "📸| ¡EN CASA! #VamosJunior"',
+      date: '01/06/25',
       description: '(Espacio para agregar descripción)',
       image:
-        'https://scontent.cdninstagram.com/v/t51.75761-15/494496132_18510803104044049_4075241874861079796_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&_nc_cat=110&ccb=1-7&_nc_sid=18de74&_nc_ohc=-bPLh_SsLQwQ7kNvwHpP7G2&_nc_oc=AdntWB47i3alrAmDMnUMpKr7ODY_chuO8LSQOiCf7NfuTQAVxprw3gTc_-lK8jRTXAE&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=jkp9nwxKrHdYWolLJY3hBg&oh=00_AfLffOiRcunc2SdA0EyZRkvvPLIIpZwealtZbas5kzwbhQ&oe=683A3CDD',
-      type: 'mascot',
-    },
-    {
-      id: 7,
-      link: 'https://www.instagram.com/p/DI7Fds-xQlF/?igsh=M2g5ODgwN3AydmJq',
-      title:
-        'Junior FC on Instagram: "🚨ATENCIÓN🚨 ¡Así de fácil funciona nuestro sorteo!',
-      date: '15/04/25',
-      description: '(Espacio para agregar descripción)',
-      image:
-        'https://scontent.cdninstagram.com/v/t51.75761-15/491442313_18510016531044049_2643703523601259805_n.jpg?stp=c269.0.808.808a_dst-jpg_e35_s640x640_tt6&_nc_cat=100&ccb=1-7&_nc_sid=18de74&_nc_ohc=JEs8VGlw7TwQ7kNvwGQ_75L&_nc_oc=AdkNoAUZDCBMR3XTgn2oJPHF76FHMGGnsa0w1F-VHEY-P-FJje4jBtNh2_Qh2MMwBPo&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=oBUwclTef5Lw_gtshStxkQ&oh=00_AfII05b6p6xtqAM20PbvuE2YH575zWo0wx4BcTIiTKCW5w&oe=683A37F2',
-      type: 'mascot',
-    },
-    {
-      id: 8,
-      link: 'https://www.instagram.com/reel/DI6zVIDJEvM/?igsh=b2g1b3k2c2djMXo0',
-      title:
-        'Win Sports on Instagram: "🦈✨ Hoy juega Junior... ¿Será que habrá magia de Don Jordan Barrera ante Pereira? 😱😱 ¿A quién me recuerda ese enganche?"',
-      date: '15/04/25',
-      description: '(Espacio para agregar descripción)',
-      image:
-        'https://scontent.cdninstagram.com/v/t51.71878-15/491497092_1202042591558645_6121250705425652500_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=106&ccb=1-7&_nc_sid=18de74&_nc_ohc=FQp0AmBSPBIQ7kNvwF8NxGK&_nc_oc=AdmLKpk-Ng1QC02LHKUkV6UnUOPsKIxzgJL77Bgi8jdXfU2HIlSxrGm2olTdd_7y1uk&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=DWICEFgqeMjsufBoFAP3KA&oh=00_AfLGcpx473AnKgWc1RBso8um1okUokC2z7oZR_gr4vPgeg&oe=683A44AD',
-      type: 'mascot',
-    },
-    {
-      id: 9,
-      link:
-        'https://www.instagram.com/p/DI6vm48xMLD/?img_index=8&igsh=a2hzemR4czY3czN4',
-      title: 'Junior FC on Instagram: "📸| ¡ACTIVACIÓN! #VamosJunior"',
-      date: '15/04/25',
-      description: '(Espacio para agregar descripción)',
-      image:
-        'https://scontent.cdninstagram.com/v/t51.75761-15/491443488_18509989264044049_7101889852433084633_n.jpg?stp=c288.0.864.864a_dst-jpg_e35_s640x640_tt6&_nc_cat=102&ccb=1-7&_nc_sid=18de74&_nc_ohc=BwN6ZE-v4lsQ7kNvwGGIHfw&_nc_oc=AdlHdLp-I-QIq8hs0aqRB9zL92LHn5NspnW1JGj9ixz7h7BxXD5hNqlQ4WVmaZ-GKcc&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=5YAFlC0bwwb16PvWnKTmcA&oh=00_AfK0kmfbTA45SUH3oMBF1N3eTKq_r2pQsUi6Do3WvSxrdw&oe=683A461C',
-      type: 'mascot',
-    },
-    {
-      id: 10,
-      link:
-        'https://www.instagram.com/reel/DI2UGJhtE5X/?igsh=MTBna2hycnNsemV4MA%3D%3D',
-      title:
-        'Junior FC on Instagram: "🎥| ¡SE CALIENTA LA PREVIA! 🔥🦈 Esto dijeron nuestros jugadores Steven Rodríguez y Santiago Mele, previo al encuentro ante Deportivo Pereira. #VamosJunior"',
-      date: '15/04/25',
-      description: '(Espacio para agregar descripción)',
-      image:
-        'https://scontent.cdninstagram.com/v/t51.75761-15/491444210_18509816008044049_4924895329056090507_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=TXwXp1Bcht8Q7kNvwEbWyI7&_nc_oc=Adn0k3G0nARX0FPFbTFE6gHfd8AKfBnbPCMqYFKYooTSB0lvSVYmvVfjhk80nWfNpzE&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=zDzNBAiNRbf-JtILbAjZGw&oh=00_AfKhs3MPnudSmmjHTb7Z-AFBvDhTnIWBSSYFvqTnJS5YIg&oe=683A59FF',
+        'https://scontent.cdninstagram.com/v/t51.75761-15/503043022_18516781288044049_1957524959463948365_n.jpg?stp=c288.0.864.864a_dst-jpg_e35_s640x640_tt6&_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=ZQsBUROfDQQQ7kNvwE8r-Ha&_nc_oc=AdlUfrhokyTnqJYS5U-XFYvUgC5ToX3WKnLfixPrNWCsdZ75nk-7CGNWBlr58pmk3wg&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=deU0LnEIYheOc9voHSJbmA&oh=00_AfObApOoAndP3BxDlvY2-Xfn0ejDhqPw8p2nLG6nWsh-KQ&oe=6847D10C',
       type: 'mascot',
     },
   ]
 
-  const scrollToIndex = (index: number) => {
+  const scrollToIndex = (index: any) => {
     if (carouselRef.current) {
       const carousel = carouselRef.current
-      // @ts-ignore
       const items = carousel.children
+
       if (items[index]) {
+        const item = items[index] as HTMLElement
         const scrollLeft =
-          items[index].offsetLeft -
-          // @ts-ignore
-          (carousel.offsetWidth - items[index].offsetWidth) / 2
-        // @ts-ignore
+          item.offsetLeft - (carousel.offsetWidth - item.offsetWidth) / 2
+
         carousel.scrollTo({ left: scrollLeft, behavior: 'smooth' })
         setCurrentIndex(index)
       }
     }
   }
 
-  const scrollCarousel = (direction: number) => {
+  const scrollCarousel = (direction: any) => {
     const newIndex =
       direction === 1
         ? (currentIndex + 1) % newsItems.length
         : (currentIndex - 1 + newsItems.length) % newsItems.length
+
     scrollToIndex(newIndex)
   }
 
   const startAutoScroll = () => {
-    // @ts-ignore
     autoScrollRef.current = setInterval(() => {
       scrollCarousel(1)
     }, 4000)
@@ -152,13 +111,15 @@ export function PostSlider() {
   const stopAutoScroll = () => {
     if (autoScrollRef.current) {
       clearInterval(autoScrollRef.current)
+      autoScrollRef.current = null
     }
   }
 
   useEffect(() => {
     startAutoScroll()
+
     return () => stopAutoScroll()
-  }, [currentIndex])
+  }, [])
 
   return (
     <div className={styles.newsSection}>
@@ -169,6 +130,7 @@ export function PostSlider() {
           style={{ width: '100%', height: '100%' }}
         />
       </div>
+
       <div className={styles.backgroundImageWrapper}>
         <picture>
           <source
@@ -186,6 +148,7 @@ export function PostSlider() {
           />
         </picture>
       </div>
+
       <div className={styles.container}>
         <div className={styles.carouselContainer}>
           <div className={styles.juniorPapaLogo}>

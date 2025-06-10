@@ -16,11 +16,16 @@
 .text::before {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 2rem;
-  width: 6.5rem;
-  height: 3px;
   background-color: #dc2626;
+}
+
+@media (min-width: 768px) {
+  .text::before {
+    bottom: -4px;
+    left: 2rem;
+    width: 6.5rem;
+    height: 3px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -52,5 +57,175 @@
 @media (min-width: 1024px) {
   .tilePost {
     font-size: 1.5rem;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.sliderWrapper2 {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.slidesContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slideActive {
+  opacity: 1;
+}
+
+.slideContainer2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slideImage2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.slideContent {
+  z-index: 2;
+}
+
+.slideTitle {
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.slideDescription {
+  color: #fff;
+  max-width: 600px;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.slideButton {
+  background-color: #ff0000;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.slideButton:hover {
+  background-color: #cc0000;
+  transform: translateY(-1px);
+}
+
+.listSection {
+  margin-bottom: 1.5rem;
+}
+
+.listTitle {
+  font-weight: bold;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.listBullet {
+  color: #dc2626;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .slideTitle {
+    font-size: 1.5rem;
+  }
+
+  .slideDescription {
+    font-size: 0.9rem;
+  }
+
+  .modalContent {
+    margin: 0.5rem;
+    max-height: 95vh;
+  }
+
+  .tabsContainer {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .slideTitle {
+    font-size: 1.25rem;
+  }
+
+  .slideDescription {
+    font-size: 0.85rem;
+    max-width: 90%;
+  }
+
+  .modalOverlay {
+    padding: 0.5rem;
+  }
+
+  .tabButton {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
   }
 }

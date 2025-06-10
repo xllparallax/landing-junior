@@ -1,9 +1,6 @@
 import React from 'react'
+
 import styles from '../styles/category.css'
-// import menCategory from '../../public/men-category.webp'
-// import kidCategory from '../../public/kid-category.webp'
-// import womanCategory from '../../public/woman-category.webp'
-// import accessoriesCategory from '../../public/accessories-category.webp'
 
 export function Category() {
   return (
@@ -11,6 +8,11 @@ export function Category() {
       className={styles.categorySection}
       aria-label="Categoría de productos"
     >
+      <img
+        src="/arquivos/fondo-3.png"
+        alt=""
+        style={{ position: 'absolute', top: 0, left: 0 }}
+      />
       <div className={styles.categoryContent}>
         <p className={styles.categoryTitle}>
           VIVE LA <span>PASIÓN</span>
@@ -35,7 +37,7 @@ export function Category() {
           className={`${styles.categoryItem} ${styles.categoryItemRed}`}
           role="listitem"
         >
-          <div className={styles.categoryBg}></div>
+          <div className={styles.categoryBg} />
           <img
             src="/arquivos/rectangle-8985.png"
             className={styles.categoryImage}
@@ -54,7 +56,7 @@ export function Category() {
           className={`${styles.categoryItem} ${styles.categoryItemBlue}`}
           role="listitem"
         >
-          <div className={styles.categoryBg}></div>
+          <div className={styles.categoryBg} />
           <img
             src="/arquivos/rectangle 8985-kid.png"
             className={styles.categoryImage}
@@ -72,7 +74,7 @@ export function Category() {
           className={`${styles.categoryItem} ${styles.categoryItemRed}`}
           role="listitem"
         >
-          <div className={styles.categoryBg}></div>
+          <div className={styles.categoryBg} />
           <img
             src="/arquivos/Rectangle 8985-woman.png"
             className={styles.categoryImage}
@@ -88,7 +90,7 @@ export function Category() {
           className={`${styles.categoryItem} ${styles.categoryItemBlue}`}
           role="listitem"
         >
-          <div className={styles.categoryBg}></div>
+          <div className={styles.categoryBg} />
           <img
             src="/arquivos/rectangle-8985-bottle.png"
             className={styles.categoryImage}
@@ -102,75 +104,4 @@ export function Category() {
       </div>
     </section>
   )
-
-  // return (
-  //   <section
-  //     className={styles.categorySectionBg}
-  //     aria-label="Categoría de productos"
-  //   >
-  //     <div className={styles.categoryContent}>
-  //       <p className={styles.categoryTitle}>
-  //         Vive la <span> Pasión</span>
-  //       </p>
-  //       <span
-  //         className={styles.categoryDescription}
-  //         aria-label="Descripción de la categoría"
-  //       >
-  //         (Espacio para agregar descripción)
-  //       </span>
-  //     </div>
-  //     <div
-  //       className={styles.categoryGrid}
-  //       role="list"
-  //       aria-label="Listado de categorías"
-  //     >
-  //       <img src="/arquivos/image 13.png" alt="" />
-
-  //       <div className={styles.categoryItemRed} role="listitem">
-  //         <img
-  //           src="/arquivos/rectangle-8985.png"
-  //           className={styles.categoryImage}
-  //           alt="Categoría de ropa para hombre Junior Olimpica"
-  //           loading="lazy"
-  //         />
-  //         <div className={styles.categoryName}>
-  //           <p>Hombre</p>
-  //         </div>
-  //       </div>
-  //       <div className={styles.categoryItemBlue} role="listitem">
-  //         <img
-  //           src="/arquivos/rectangle 8985-kid.png"
-  //           className={styles.categoryImage}
-  //           alt="Categoría de ropa para niños Junior Olimpica"
-  //           loading="lazy"
-  //         />
-  //         <div className={styles.categoryName}>
-  //           <p>Niños</p>
-  //         </div>
-  //       </div>
-  //       <div className={styles.categoryItemRed} role="listitem">
-  //         <img
-  //           src="/arquivos/Rectangle 8985-woman.png"
-  //           className={styles.categoryImage}
-  //           alt="Categoría de ropa para mujer Junior Olimpica"
-  //           loading="lazy"
-  //         />
-  //         <div className={styles.categoryName}>
-  //           <p>Mujer</p>
-  //         </div>
-  //       </div>
-  //       <div className={styles.categoryItemBlue} role="listitem">
-  //         <img
-  //           src="/arquivos/rectangle-8985-bottle.png"
-  //           className={styles.categoryImage}
-  //           alt="Categoría de accesorios Junior Olimpica"
-  //           loading="lazy"
-  //         />
-  //         <div className={styles.categoryName}>
-  //           <p>Accesorios</p>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </section>
-  // )
 }

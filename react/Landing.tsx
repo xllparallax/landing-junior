@@ -1,4 +1,5 @@
-import React, { PropsWithChildren } from 'react'
+import React, { PropsWithChildren, useState } from 'react'
+
 import { useGetChildren } from './hooks/use-get-children'
 import { Hero } from './components/hero'
 import { AutoSlider } from './components/auto-slider'
@@ -9,16 +10,24 @@ import { Products } from './components/products'
 import { PostSlider } from './components/post-slider'
 import { useMediaQuery } from './hooks/use-media-queyr'
 import styles from './styles/highlighted.css'
-import { Slider2, VuamosJunior } from './components/slider-2'
+import { historyData, Slider2, VuamosJunior } from './components/slider-2'
+import { ModalHistory } from './components/modal-history'
 
 type Props = PropsWithChildren<{}>
 
 function Landing({ children }: Props) {
+  const [showModal, setShowModal] = useState(false)
+  const [activeSection, setActiveSection] = useState('fundacion')
   const accesorios = useGetChildren({ children, position: 0 })
   const hombres = useGetChildren({ children, position: 1 })
   const mujer = useGetChildren({ children, position: 2 })
   const infantil = useGetChildren({ children, position: 3 })
   const isMobile = useMediaQuery('(max-width: 768px)')
+
+  const openModal = () => setShowModal(true)
+  const closeModal = () => setShowModal(false)
+
+  console.log({ children })
 
   return (
     <>
@@ -43,75 +52,68 @@ function Landing({ children }: Props) {
         ]}
       />
       {isMobile && (
-        <div
-          style={{
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          <img
-            src="/arquivos/Group 1000002335 1.png"
-            alt=""
-            style={{
-              width: '100%',
-            }}
-          />
+        <>
           <div
-            className={styles.highlightedContent}
             style={{
-              padding: '20px',
-              boxSizing: 'border-box',
-              width: '100%',
-              maxWidth: '100%',
+              position: 'relative',
               display: 'flex',
-              flexDirection: 'column',
               alignItems: 'center',
-              textAlign: 'center',
             }}
           >
-            {' '}
-            <a
-              target="_blank"
-              href="https://www.instagram.com/juniorclubsa/"
+            <img
+              src="/arquivos/Group 1000002335 1.png"
+              alt=""
               style={{
-                fontWeight: 400,
-                fontStyle: 'italic',
-                fontSize: '20px',
-                textTransform: 'uppercase',
-                color: '#ffff',
+                width: '100%',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                width: '100%',
               }}
             >
-              instagram
-            </a>
-            <a
-              style={{ textDecoration: 'none' }}
-              href="https://www.instagram.com/reel/DI2UGJhtE5X/?igsh=MTBna2hycnNsemV4MA%3D%3D"
-              target="_blank"
-            >
               <h2
-                className={styles.tilePost}
                 style={{
-                  fontSize: '0.85rem',
-                  fontWeight: '900',
-                  textTransform: 'uppercase',
-                  marginBottom: '0',
-                  lineHeight: '1.1',
-                  color: 'white',
-                  textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)',
-                  letterSpacing: '-0.5px',
-                  maxWidth: '100%',
-                  wordBreak: 'break-word',
+                  color: '#fff',
+                  textShadow: '1px 1px 3px rgba(0, 0, 0, 0.7)',
                 }}
               >
-                🎥| ¡SE CALIENTA LA PREVIA! 🔥🦈 <br /> Esto dijeron nuestros
-                jugadores Steven <br /> Rodríguez y Santiago Mele, previo al
-                encuentro ante Deportivo Pereira.
+                Junior FC: Pasión, Historia y Gloria
               </h2>
+              <p
+                style={{
+                  textAlign: 'center',
+                  color: '#fff',
+                  textShadow: '1px 1px 3px rgba(0, 0, 0, 0.7)',
+                  fontSize: '12px',
+                }}
+              >
+                Fundado en 1924, Junior se ha convertido en un símbolo de la
+                Costa Caribe. Con 10 títulos de liga, glorias como Viera y
+                Valenciano, y una rica historia de triunfos nacionales e
+                internacionales.
+              </p>
+              <div>
+                <button onClick={openModal} className={styles.slideButton}>
+                  Ver historia completa
+                </button>
+              </div>
               <VuamosJunior />
-            </a>
+            </div>
           </div>
-        </div>
+          {showModal && (
+            <ModalHistory
+              activeSection={activeSection}
+              closeModal={closeModal}
+              historyData={historyData}
+              setActiveSection={setActiveSection}
+            />
+          )}
+        </>
       )}
       {!isMobile && <Slider2 />}
       <Products

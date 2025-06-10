@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import React from 'react'
+import React, { useState } from 'react'
+
 import styles from '../styles/products.css'
 
 export function Products({
@@ -40,7 +40,13 @@ export function Products({
         <img src="/arquivos/fondo-4.png" alt="" className={styles.juju} />
       </div>
       <div className={styles.camisetasOficialesContainer}>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            position: 'relative',
+          }}
+        >
           <picture>
             <source
               srcSet="/arquivos/fondo-camisa-mobile.png"
@@ -101,9 +107,9 @@ export function Products({
         </div>
       </div>
 
-      <div className={styles.juniorLogo}>
+      {/* <div className={styles.juniorLogo}>
         <img src="/arquivos/escudo (2).png" alt="" />|
-      </div>
+      </div> */}
     </div>
   )
 }

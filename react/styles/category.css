@@ -195,7 +195,7 @@
 /* Mobile styles */
 @media screen and (max-width: 480px) {
   .categorySection {
-    padding: 3rem 0.5rem;
+    padding: 3rem 0.25rem;
     padding-bottom: 0.5rem;
     gap: 2rem;
     background-image: none;

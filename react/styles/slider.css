@@ -1,7 +1,6 @@
 .sliderContainer {
   position: relative;
   width: 100%;
-  margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -30,7 +29,7 @@
   display: block;
 }
 
-.navButton {
+.navButtonSlider {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -53,11 +52,11 @@
   transform: translateY(-50%) scale(1.1);
 }
 
-.prevButton {
+.prevButtonSlider {
   left: 20px;
 }
 
-.nextButton {
+.nextButtonSlider {
   right: 20px;
 }
 
@@ -99,7 +98,6 @@
   .sliderContainer {
     height: 280px; /* Altura más grande para mobile */
     border-radius: 8px;
-    margin: 0 10px;
   }
 
   .slideImage {
@@ -144,7 +142,6 @@
 @media screen and (max-width: 480px) {
   .sliderContainer {
     height: 250px; /* Altura ajustada para mobile pequeño */
-    margin: 0 5px;
   }
 
   .navButton {
@@ -197,4 +194,5 @@
 .slideLink {
   display: block;
   height: 100%;
+  width: 100%;
 }
