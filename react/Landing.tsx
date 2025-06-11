@@ -63,7 +63,7 @@ function Landing() {
             }}
           >
             <img
-              src="/arquivos/bg-modal.png"
+              src="/arquivos/bg-historiajuniot-mobile.png"
               alt=""
               style={{
                 width: '100%',
@@ -77,8 +77,8 @@ function Landing() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 width: '100%',
-                padding: '2rem',
-                gap: '1rem',
+                padding: '3.5rem',
+                gap: '2rem',
               }}
             >
               <h2
@@ -106,8 +106,11 @@ function Landing() {
                 internacionales.
               </p>
               <div>
-                <button onClick={openModal} className={styles.slideButton}>
-                  Ver historia completa
+                <button
+                  onClick={openModal}
+                  className={styles.slideButtonJunior}
+                >
+                  Ver historia
                 </button>
               </div>
               {/* <VuamosJunior /> */}

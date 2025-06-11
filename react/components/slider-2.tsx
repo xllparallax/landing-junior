@@ -129,7 +129,7 @@ export function Slider2() {
       content: (
         <div className={sliderStyles.slideContainer2}>
           <img
-            src="/arquivos/historia-junior.png"
+            src="/arquivos/bg-historiajunior-desktop.png"
             alt="Viera"
             className={sliderStyles.slideImage2}
           />
@@ -144,7 +144,10 @@ export function Slider2() {
               Caribe. Con 10 títulos de liga, glorias como Viera y Valenciano, y
               una rica historia de triunfos nacionales e internacionales.
             </p>
-            <button onClick={openModal} className={sliderStyles.slideButton}>
+            <button
+              onClick={openModal}
+              className={sliderStyles.slideButtonJunior}
+            >
               Ver historia
             </button>
             {/* <VuamosJunior /> */}
