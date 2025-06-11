@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import sliderStyles from '../styles/slider-2.css'
-import styles from '../styles/slider-2.css'
+// import styles from '../styles/slider-2.css'
 import { useResponsiveHeight } from '../hooks/use-responsive-height'
 import { ModalHistory } from './modal-history'
 
@@ -127,27 +127,27 @@ export function Slider2() {
     {
       id: 1,
       content: (
-        <div className={styles.slideContainer2}>
+        <div className={sliderStyles.slideContainer2}>
           <img
-            src="/arquivos/Group-1000002338.png"
+            src="/arquivos/historia-junior.png"
             alt="Viera"
-            className={styles.slideImage2}
+            className={sliderStyles.slideImage2}
           />
           <div
-            className={`${sliderStyles.contentPostConttainer} ${styles.slideContent}`}
+            className={`${sliderStyles.contentPostConttainer} ${sliderStyles.slideContent}`}
           >
-            <h2 className={styles.slideTitle}>
+            <h2 className={sliderStyles.slideTitle}>
               Junior FC: Pasión, Historia y Gloria
             </h2>
-            <p className={styles.slideDescription}>
+            <p className={sliderStyles.slideDescription}>
               Fundado en 1924, Junior se ha convertido en un símbolo de la Costa
               Caribe. Con 10 títulos de liga, glorias como Viera y Valenciano, y
               una rica historia de triunfos nacionales e internacionales.
             </p>
-            <button onClick={openModal} className={styles.slideButton}>
-              Ver historia completa
+            <button onClick={openModal} className={sliderStyles.slideButton}>
+              Ver historia
             </button>
-            <VuamosJunior />
+            {/* <VuamosJunior /> */}
           </div>
         </div>
       ),
@@ -156,15 +156,15 @@ export function Slider2() {
 
   return (
     <div
-      className={styles.sliderWrapper2}
+      className={sliderStyles.sliderWrapper2}
       style={{ height: `${responsiveHeight}px` }}
     >
-      <div className={styles.slidesContainer}>
+      <div className={sliderStyles.slidesContainer}>
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`${styles.slide2} ${
-              index === currentSlide ? styles.slideActive : ''
+            className={`${sliderStyles.slide2} ${
+              index === currentSlide ? sliderStyles.slideActive : ''
             }`}
           >
             {slide.content}
@@ -186,7 +186,7 @@ export function Slider2() {
 
 export function VuamosJunior({ className }: { className?: string }) {
   return (
-    <div className={`${sliderStyles.container} ${className || ''}`}>
+    <div className={`${sliderStyles.container} ${className ?? ''}`}>
       <span className={sliderStyles.text}>#VAMOSJUNIOR</span>
     </div>
   )

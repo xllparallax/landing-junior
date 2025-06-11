@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -12,34 +14,178 @@
   padding: 1rem;
 }
 
-.modalContent {
-  /* background: white; */
-  border-radius: 12px;
-  max-width: 900px;
-  width: 100%;
-  max-height: 90vh;
-  overflow: hidden;
+.modalContainerjunior {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1920px;
+  height: 40rem;
+  overflow: hidden;
+  background-color: #f9fafb;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
 }
 
-.modalHeader {
-  background-color: #dc2626;
-  color: white;
-  padding: 1.5rem;
-  position: relative;
-}
-
-@media (max-width: 480px) {
-  .modalHeader {
-    padding: 0.75rem;
+/* Responsive para el container principal */
+@media (max-width: 1200px) {
+  .modalContainerjunior {
+    height: 35rem;
+    width: 95%;
   }
 }
 
 @media (max-width: 768px) {
-  .modalHeader {
+  .modalContainerjunior {
+    height: 85vh; /* Aumentado de 32rem para más espacio */
+    width: 98%;
+    flex-direction: column;
+  }
+
+  .modalOverlay {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalContainerjunior {
+    height: 92vh; /* Aumentado para más espacio */
+    width: 100%;
+    margin: 0;
+    border-radius: 4px;
+  }
+
+  .modalOverlay {
+    padding: 0.25rem;
+  }
+}
+
+.imgTeam {
+  width: 30%;
+  height: 100%;
+  background-image: url('/arquivos/jugadores.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Responsive para la imagen */
+@media (max-width: 768px) {
+  .imgTeam {
+    width: 100%;
+    height: 20%; /* Reducido para dar más espacio al contenido */
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imgTeam {
+    height: 15%; /* Más reducido en mobile */
+    min-height: 80px;
+  }
+}
+
+.modalContentjunior {
+  background-color: #00309b;
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive para el contenido */
+@media (max-width: 768px) {
+  .modalContentjunior {
+    width: 100%;
+    height: 80%; /* Aumentado para más espacio */
+  }
+}
+
+@media (max-width: 480px) {
+  .modalContentjunior {
+    height: 85%; /* Más espacio para el contenido */
+  }
+}
+
+.modalHeaderJunior {
+  background-image: url('/arquivos/bg-modal.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  min-height: 120px;
+}
+
+@media (max-width: 1200px) {
+  .modalHeaderJunior {
+    padding: 1.5rem;
+    min-height: 110px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalHeaderJunior {
     padding: 1rem;
+    justify-content: flex-start;
+    min-height: 80px; /* Reducido para dar más espacio al body */
+  }
+}
+
+@media (max-width: 480px) {
+  .modalHeaderJunior {
+    padding: 0.75rem;
+    min-height: 70px; /* Más compacto */
+  }
+}
+
+/* Contenedor del texto del header */
+.modalHeaderText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .modalHeaderText {
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalHeaderText {
+    gap: 0.125rem;
+  }
+}
+
+/* Logo/Escudo de Junior */
+.logoJunior {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+  .logoJunior {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logoJunior {
+    display: none; /* Ocultar en tablet y móvil para ahorrar espacio */
   }
 }
 
@@ -56,6 +202,23 @@
   padding: 0.25rem;
   line-height: 1;
   transition: color 0.2s;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .modalCloseButton {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalCloseButton {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.125rem;
+  }
 }
 
 .modalCloseButton:hover {
@@ -63,14 +226,30 @@
 }
 
 .modalTitle {
-  font-size: 1.875rem;
-  font-weight: bold;
-  margin: 0 0 0.5rem 0;
+  font-size: 2.6rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1200px) {
+  .modalTitle {
+    font-size: 2.2rem;
+  }
 }
 
 @media (max-width: 768px) {
   .modalTitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem; /* Reducido ligeramente */
+  }
+}
+
+@media (max-width: 480px) {
+  .modalTitle {
+    font-size: 1.3rem; /* Más compacto */
   }
 }
 
@@ -78,28 +257,59 @@
   color: #fecaca;
   margin: 0;
   font-style: italic;
+  font-size: 0.8rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .modalSubtitle {
+    font-size: 0.7rem; /* Más pequeño */
+  }
+}
+
+@media (max-width: 480px) {
+  .modalSubtitle {
+    font-size: 0.65rem; /* Más compacto */
+  }
 }
 
 .modalNavigation {
   padding: 0.75rem 1.5rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .modalNavigation {
+    padding: 0.4rem 1rem; /* Reducido */
+  }
 }
 
 @media (max-width: 480px) {
   .modalNavigation {
-    padding: 0.5rem 0.75rem;
+    padding: 0.3rem 0.75rem; /* Más compacto */
   }
 }
 
 .tabsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  padding: 0.75rem;
 }
 
 @media (max-width: 768px) {
   .tabsContainer {
+    gap: 0.4rem;
+    padding: 0.3rem;
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabsContainer {
+    gap: 0.3rem;
+    padding: 0.2rem;
   }
 }
 
@@ -111,49 +321,91 @@
   border: none;
   cursor: pointer;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {
   .tabButton {
-    font-size: 0.75rem;
-    padding: 0.375rem 0.75rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabButton {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
   }
 }
 
 .tabButtonActive {
   background-color: #dc2626;
   color: white;
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
 }
 
 .tabButtonInactive {
-  background-color: white;
-  color: #374151;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
 }
 
 .tabButtonInactive:hover {
-  background-color: #e5e7eb;
+  background-color: rgba(220, 38, 38, 0.2);
+  border-color: rgba(220, 38, 38, 0.3);
 }
 
 .modalBody {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.modalBody {
-  flex: 1;
+  height: 17rem;
   overflow-y: auto;
   padding: 2rem;
+  font-size: 16px;
+  line-height: 1.6;
+  flex: 1;
+
+  /* Personalizar scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(220, 38, 38, 0.6) transparent;
 }
 
-@media (max-width: 480px) {
+.modalBody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modalBody::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modalBody::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.6);
+  border-radius: 3px;
+}
+
+.modalBody::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.8);
+}
+
+@media (max-width: 1200px) {
   .modalBody {
-    padding: 0.75rem;
+    height: 15rem;
+    padding: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .modalBody {
+    height: 22rem; /* AUMENTADO significativamente */
+    padding: 1.2rem;
+    font-size: 15px; /* Aumentado */
+  }
+}
+
+@media (max-width: 480px) {
+  .modalBody {
+    height: 28rem; /* MUCHO MÁS GRANDE para mobile */
     padding: 1rem;
+    font-size: 14px; /* Aumentado para mejor legibilidad */
   }
 }
 
@@ -163,73 +415,286 @@
   line-height: 1.75;
 }
 
+@media (max-width: 768px) {
+  .modalContentWrapper {
+    font-size: 1.1rem; /* Aumentado */
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalContentWrapper {
+    font-size: 1rem; /* Aumentado */
+    line-height: 1.6;
+  }
+}
+
 .modalSectionTitle {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #dc2626;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
   margin: 0 0 1rem 0;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .modalSectionTitle {
+    font-size: 1.3rem; /* Aumentado */
+    margin: 0 0 0.8rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalSectionTitle {
+    font-size: 1.2rem; /* Aumentado */
+    margin: 0 0 0.7rem 0;
+  }
+}
+
+.listSection {
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .listSection {
+    margin-bottom: 1.2rem; /* Aumentado */
+  }
+}
+
+@media (max-width: 480px) {
+  .listSection {
+    margin-bottom: 1rem; /* Aumentado */
+  }
+}
+
+.listTitleJunior {
+  font-weight: bold;
+  color: white;
+  margin: 0 0 0.75rem 0;
+  font-size: 0.85rem !important;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .listTitleJunior {
+    font-size: 0.85rem !important; /* Mantenido */
+    margin: 0 0 0.6rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .listTitleJunior {
+    font-size: 0.8rem !important; /* Aumentado */
+    margin: 0 0 0.5rem 0;
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  padding: 0;
+  font-size: 0.7rem !important;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .listItem {
+    font-size: 0.7rem !important; /* Aumentado */
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .listItem {
+    font-size: 0.68rem !important; /* Aumentado */
+    margin-bottom: 0.35rem;
+    line-height: 1.4;
+  }
+}
+
+.listBullet {
+  color: #dc2626;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+
+@media (max-width: 768px) {
+  .listBullet {
+    margin-right: 0.4rem;
+    font-size: 0.8rem; /* Aumentado */
+  }
+}
+
+@media (max-width: 480px) {
+  .listBullet {
+    margin-right: 0.35rem;
+    font-size: 0.75rem; /* Aumentado */
+  }
 }
 
 .modalText {
-  color: #374151;
-  line-height: 1.6;
+  color: white;
+  line-height: 1.5;
 }
 
 .modalParagraph {
   margin-bottom: 1rem;
   text-align: justify;
-  font-size: 0.75rem;
+  font-size: 0.8rem !important;
+  line-height: 1.5;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .modalParagraph {
-    font-size: 1rem;
+    font-size: 0.8rem !important; /* AUMENTADO de 0.75rem */
+    margin-bottom: 0.8rem;
+    line-height: 1.5; /* Aumentado */
+  }
+}
+
+@media (max-width: 480px) {
+  .modalParagraph {
+    font-size: 0.75rem !important; /* AUMENTADO de 0.7rem */
+    margin-bottom: 0.7rem;
+    line-height: 1.4; /* Aumentado */
   }
 }
 
 .modalFooter {
-  background-color: #f9fafb;
-  padding: 1rem 1.5rem;
-  border-top: 1px solid #e5e7eb;
+  background-color: #00309b;
+  padding: 1.5rem 2rem 1rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .modalFooter {
+    padding: 0.8rem 1.5rem 0.6rem 1.5rem; /* Reducido para dar más espacio al body */
+  }
+}
+
+@media (max-width: 480px) {
+  .modalFooter {
+    padding: 0.6rem 1rem 0.4rem 1rem; /* Más compacto */
+  }
 }
 
 .modalFooterContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 @media (max-width: 768px) {
   .modalFooterContent {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem; /* Reducido */
     align-items: stretch;
   }
 }
 
+@media (max-width: 480px) {
+  .modalFooterContent {
+    gap: 0.4rem;
+  }
+}
+
 .modalFooterInfo {
-  font-size: 0.875rem;
-  color: #6b7280;
+  font-size: 0.8rem;
+  color: white;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .modalFooterInfo {
+    font-size: 0.7rem; /* Reducido */
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalFooterInfo {
+    font-size: 0.65rem; /* Más compacto */
+  }
 }
 
 .modalFooterButton {
   background-color: #dc2626;
   color: white;
-  padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 2rem;
   border: none;
   border-radius: 0.5rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .modalFooterButton:hover {
   background-color: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
 }
 
 @media (max-width: 768px) {
   .modalFooterButton {
     width: 100%;
     text-align: center;
+    padding: 0.5rem 1rem; /* Reducido */
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalFooterButton {
+    padding: 0.4rem 0.75rem; /* Más compacto */
+    font-size: 0.7rem;
+  }
+}
+
+/* Mejoras adicionales para la experiencia responsive */
+@media (max-width: 480px) {
+  /* Mejorar la legibilidad en pantallas muy pequeñas */
+  .modalText * {
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* Ajustar el espaciado general */
+  .modalContentWrapper > * + * {
+    margin-top: 0.6rem; /* Aumentado */
+  }
+}
+
+/* Animaciones suaves */
+.modalContainerjunior {
+  transition: all 0.3s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modalContainerjunior,
+  .tabButton,
+  .modalFooterButton {
+    transition: none;
   }
 }

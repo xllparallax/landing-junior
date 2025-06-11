@@ -42,14 +42,14 @@ export function Slider({ slides }: { slides: SlideData[] }) {
               >
                 <img
                   src={slide.image}
-                  alt={slide.alt || `Slide ${index + 1}`}
+                  alt={slide.alt && `Slide ${index + 1}`}
                   className={styles.slideImage}
                 />
               </a>
             ) : (
               <img
                 src={slide.image}
-                alt={slide.alt || `Slide ${index + 1}`}
+                alt={slide.alt && `Slide ${index + 1}`}
                 className={styles.slideImage}
               />
             )}

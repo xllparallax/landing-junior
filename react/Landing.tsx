@@ -1,33 +1,33 @@
-import React, { PropsWithChildren, useState } from 'react'
+import React, { useState } from 'react'
 
-import { useGetChildren } from './hooks/use-get-children'
 import { Hero } from './components/hero'
-import { AutoSlider } from './components/auto-slider'
-import { AdidasCollection } from './components/adidas-collection'
-import { Category } from './components/category'
 import { Slider } from './components/slider'
-import { Products } from './components/products'
+import { Category } from './components/category'
+// import { Products } from './components/products'
+import { AutoSlider } from './components/auto-slider'
 import { PostSlider } from './components/post-slider'
-import { useMediaQuery } from './hooks/use-media-queyr'
-import styles from './styles/highlighted.css'
-import { historyData, Slider2, VuamosJunior } from './components/slider-2'
 import { ModalHistory } from './components/modal-history'
+import { useMediaQuery } from './hooks/use-media-queyr'
+// import { useGetChildren } from './hooks/use-get-children'
+import { AdidasCollection } from './components/adidas-collection'
+import { historyData, Slider2 } from './components/slider-2'
+import styles from './styles/highlighted.css'
 
-type Props = PropsWithChildren<{}>
+// type Props = PropsWithChildren<{}>
 
-function Landing({ children }: Props) {
+function Landing() {
   const [showModal, setShowModal] = useState(false)
   const [activeSection, setActiveSection] = useState('fundacion')
-  const accesorios = useGetChildren({ children, position: 0 })
-  const hombres = useGetChildren({ children, position: 1 })
-  const mujer = useGetChildren({ children, position: 2 })
-  const infantil = useGetChildren({ children, position: 3 })
+  // const accesorios = useGetChildren({ children, position: 0 })
+  // const hombres = useGetChildren({ children, position: 1 })
+  // const mujer = useGetChildren({ children, position: 2 })
+  // const infantil = useGetChildren({ children, position: 3 })
   const isMobile = useMediaQuery('(max-width: 768px)')
 
   const openModal = () => setShowModal(true)
   const closeModal = () => setShowModal(false)
 
-  console.log({ children })
+  // console.log({ children })
 
   return (
     <>
@@ -58,13 +58,16 @@ function Landing({ children }: Props) {
               position: 'relative',
               display: 'flex',
               alignItems: 'center',
+              width: '100%',
+              height: '20rem',
             }}
           >
             <img
-              src="/arquivos/Group 1000002335 1.png"
+              src="/arquivos/bg-modal.png"
               alt=""
               style={{
                 width: '100%',
+                height: '100%',
               }}
             />
             <div
@@ -74,12 +77,16 @@ function Landing({ children }: Props) {
                 flexDirection: 'column',
                 alignItems: 'center',
                 width: '100%',
+                padding: '2rem',
+                gap: '1rem',
               }}
             >
               <h2
                 style={{
                   color: '#fff',
+                  textAlign: 'center',
                   textShadow: '1px 1px 3px rgba(0, 0, 0, 0.7)',
+                  margin: '0',
                 }}
               >
                 Junior FC: Pasión, Historia y Gloria
@@ -90,6 +97,7 @@ function Landing({ children }: Props) {
                   color: '#fff',
                   textShadow: '1px 1px 3px rgba(0, 0, 0, 0.7)',
                   fontSize: '12px',
+                  margin: '0',
                 }}
               >
                 Fundado en 1924, Junior se ha convertido en un símbolo de la
@@ -102,7 +110,7 @@ function Landing({ children }: Props) {
                   Ver historia completa
                 </button>
               </div>
-              <VuamosJunior />
+              {/* <VuamosJunior /> */}
             </div>
           </div>
           {showModal && (
@@ -116,12 +124,12 @@ function Landing({ children }: Props) {
         </>
       )}
       {!isMobile && <Slider2 />}
-      <Products
+      {/* <Products
         accesorios={accesorios.component}
         hombres={hombres.component}
         infantil={infantil.component}
         mujer={mujer.component}
-      />
+      /> */}
       <PostSlider />
     </>
   )
