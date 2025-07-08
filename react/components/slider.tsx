@@ -4,6 +4,7 @@ import styles from '../styles/slider.css'
 
 interface SlideData {
   image: string
+  mobileImage?: string
   link?: string
   alt?: string
 }
@@ -40,18 +41,38 @@ export function Slider({ slides }: { slides: SlideData[] }) {
                 rel="noopener noreferrer"
                 className={styles.slideLink}
               >
+                {/* Imagen Desktop */}
                 <img
                   src={slide.image}
-                  alt={slide.alt && `Slide ${index + 1}`}
-                  className={styles.slideImage}
+                  alt={slide.alt || `Slide ${index + 1}`}
+                  className={styles.slideImageDesktop}
                 />
+                {/* Imagen Mobile */}
+                {slide.mobileImage && (
+                  <img
+                    src={slide.mobileImage}
+                    alt={slide.alt || `Slide ${index + 1}`}
+                    className={styles.slideImageMobile}
+                  />
+                )}
               </a>
             ) : (
-              <img
-                src={slide.image}
-                alt={slide.alt && `Slide ${index + 1}`}
-                className={styles.slideImage}
-              />
+              <>
+                {/* Imagen Desktop */}
+                <img
+                  src={slide.image}
+                  alt={slide.alt || `Slide ${index + 1}`}
+                  className={styles.slideImageDesktop}
+                />
+                {/* Imagen Mobile */}
+                {slide.mobileImage && (
+                  <img
+                    src={slide.mobileImage}
+                    alt={slide.alt || `Slide ${index + 1}`}
+                    className={styles.slideImageMobile}
+                  />
+                )}
+              </>
             )}
           </div>
         ))}

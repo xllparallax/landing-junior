@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styles from '../styles/auto-slider.css'
 
 export function AutoSlider() {

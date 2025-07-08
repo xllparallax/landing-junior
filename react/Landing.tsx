@@ -1,27 +1,30 @@
-import React, { useState } from 'react'
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { PropsWithChildren, useState } from 'react'
 
 import { Hero } from './components/hero'
 import { Slider } from './components/slider'
 import { Category } from './components/category'
-// import { Products } from './components/products'
+import { Products } from './components/products'
 import { AutoSlider } from './components/auto-slider'
 import { PostSlider } from './components/post-slider'
 import { ModalHistory } from './components/modal-history'
 import { useMediaQuery } from './hooks/use-media-queyr'
-// import { useGetChildren } from './hooks/use-get-children'
+import { useGetChildren } from './hooks/use-get-children'
 import { AdidasCollection } from './components/adidas-collection'
+import { CategoriesProducts } from './components/categories-products'
 import { historyData, Slider2 } from './components/slider-2'
 import styles from './styles/highlighted.css'
 
-// type Props = PropsWithChildren<{}>
+type Props = PropsWithChildren<{}>
 
-function Landing() {
+function Landing({ children }: { children: Props }) {
   const [showModal, setShowModal] = useState(false)
   const [activeSection, setActiveSection] = useState('fundacion')
-  // const accesorios = useGetChildren({ children, position: 0 })
-  // const hombres = useGetChildren({ children, position: 1 })
-  // const mujer = useGetChildren({ children, position: 2 })
-  // const infantil = useGetChildren({ children, position: 3 })
+  const accesorios = useGetChildren({ children, position: 0 })
+  const hombres = useGetChildren({ children, position: 1 })
+  const mujer = useGetChildren({ children, position: 2 })
+  const infantil = useGetChildren({ children, position: 3 })
   const isMobile = useMediaQuery('(max-width: 768px)')
 
   const openModal = () => setShowModal(true)
@@ -35,17 +38,22 @@ function Landing() {
       <AutoSlider />
       <AdidasCollection />
       <Category />
+      <CategoriesProducts />
       <Slider
         slides={[
           {
             image:
               'https://olimpica.vtexassets.com/assets/vtex.file-manager-graphql/images/1682d6e1-e842-4983-a618-8437a8c78656___6b4edb4687d18045d63e53e123d3beca.jpg',
+            mobileImage:
+              'https://olimpica.vtexassets.com/assets/vtex.file-manager-graphql/images/b598f58f-5d30-43d9-800b-216e9fef7608___687bd04c06b21b23e0eb692ae578776d.jpg',
             link:
               'https://landingjunior--olimpica.myvtex.com/moda/junior/accesorios-junior',
           },
           {
             image:
               'https://olimpica.vtexassets.com/assets/vtex.file-manager-graphql/images/4d19886c-e3d0-4d4b-8597-10786bcdd232___8066f325155bab752af61c4271424ea2.jpg',
+            mobileImage:
+              'https://olimpica.vtexassets.com/assets/vtex.file-manager-graphql/images/b598f58f-5d30-43d9-800b-216e9fef7608___687bd04c06b21b23e0eb692ae578776d.jpg',
             link:
               'https://landingjunior--olimpica.myvtex.com/31388?map=productClusterIds',
           },
@@ -53,6 +61,26 @@ function Landing() {
       />
       {isMobile && (
         <>
+          <style>
+            {`@import
+            url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap')`}
+          </style>
+          <div
+            style={{
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              height: '9rem',
+              backgroundImage: 'url(/arquivos/bg-teamjunior-filter2.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'bottom',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+
+          {/* Div original con tu contenido existente */}
           <div
             style={{
               position: 'relative',
@@ -87,6 +115,9 @@ function Landing() {
                   textAlign: 'center',
                   textShadow: '1px 1px 3px rgba(0, 0, 0, 0.7)',
                   margin: '0',
+                  fontFamily: 'Bebas Neue',
+                  fontWeight: '400',
+                  fontStyle: 'normal',
                 }}
               >
                 Junior FC: Pasión, Historia y Gloria
@@ -116,6 +147,7 @@ function Landing() {
               {/* <VuamosJunior /> */}
             </div>
           </div>
+
           {showModal && (
             <ModalHistory
               activeSection={activeSection}
@@ -127,12 +159,12 @@ function Landing() {
         </>
       )}
       {!isMobile && <Slider2 />}
-      {/* <Products
+      <Products
         accesorios={accesorios.component}
         hombres={hombres.component}
         infantil={infantil.component}
         mujer={mujer.component}
-      /> */}
+      />
       <PostSlider />
     </>
   )
