@@ -164,6 +164,7 @@
   }
 
   .categoriesGridOl {
+    padding: 0 2rem;
     gap: 2rem;
     max-width: 95%;
   }

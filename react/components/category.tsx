@@ -88,9 +88,10 @@ export function Category() {
           </div>
         </a>
 
-        <div
+        <a
+          style={{ textDecoration: 'none' }}
+          href="https://www.olimpica.com/35166?map=productClusterIds&order=OrderByTopSaleDESC"
           className={`${styles.categoryItem} ${styles.categoryItemBlue}`}
-          role="listitem"
         >
           <div className={styles.categoryBg} />
           <img
@@ -102,7 +103,7 @@ export function Category() {
           <div className={styles.categoryName}>
             <p>ACCESORIOS</p>
           </div>
-        </div>
+        </a>
       </div>
     </section>
   )

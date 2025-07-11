@@ -27,7 +27,6 @@
 .playersSection {
   position: absolute;
   background-image: url('/arquivos/junior-players.png');
-
   height: 100%;
   width: 45%;
   background-size: cover;
@@ -132,12 +131,14 @@
   display: none;
   background-image: url('/arquivos/celebration.png');
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: 0 -8rem;
 }
 
 @media (min-width: 1024px) {
   .celebrationSection {
     background-image: url('/arquivos/junior-players.png');
+    background-repeat: no-repeat;
   }
 }
 
@@ -152,6 +153,7 @@
 
   .infoSection {
     width: 100%;
+    background-repeat: no-repeat;
   }
 
   .infoContent {
@@ -175,6 +177,10 @@
 
   .collectionContent {
     height: 30rem;
+  }
+
+  .infoSection {
+    background-repeat: no-repeat;
   }
 
   .infoContent {
@@ -202,6 +208,9 @@
   .celebrationSection {
     display: flex;
     width: 100%;
-    height: 3rem;
+    height: 4rem;
+    background-image: url('/arquivos/junior-players.png');
+    background-repeat: no-repeat;
+    background-position: left;
   }
 }

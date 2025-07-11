@@ -63,7 +63,7 @@ export function Products({
             />
           </picture>
 
-          <div style={{ display: 'flex', height: '3.5rem' }}>
+          <div style={{ display: 'flex', height: '3.5rem', padding: '0 1rem' }}>
             {tabs.map((tab, index) => (
               <button
                 key={index}
