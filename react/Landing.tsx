@@ -34,6 +34,17 @@ function Landing({ children }: { children: Props }) {
 
   return (
     <>
+      <div style={{ padding: '1rem 0' }}>
+        <Slider
+          slides={[
+            {
+              image: '/arquivos/JUNIOR-2025-HUINCHA.jpg',
+              mobileImage: '/arquivos/JUNIOR-2025-HUINCHA-MB.jpg',
+              link: '/35163?map=productClusterIds',
+            },
+          ]}
+        />
+      </div>
       <Hero />
       <AutoSlider />
       <AdidasCollection />
@@ -42,20 +53,24 @@ function Landing({ children }: { children: Props }) {
       <Slider
         slides={[
           {
-            image:
-              'https://olimpica.vtexassets.com/assets/vtex.file-manager-graphql/images/1682d6e1-e842-4983-a618-8437a8c78656___6b4edb4687d18045d63e53e123d3beca.jpg',
-            mobileImage:
-              'https://olimpica.vtexassets.com/assets/vtex.file-manager-graphql/images/b598f58f-5d30-43d9-800b-216e9fef7608___687bd04c06b21b23e0eb692ae578776d.jpg',
-            link:
-              'https://landingjunior--olimpica.myvtex.com/moda/junior/accesorios-junior',
+            image: '/arquivos/ACCESORIOS PRINC.jpg',
+            mobileImage: '/arquivos/ACCESORIOS MB.jpg',
+            link: '/35166?map=productClusterIds&order=OrderByTopSaleDESC',
           },
           {
-            image:
-              'https://olimpica.vtexassets.com/assets/vtex.file-manager-graphql/images/4d19886c-e3d0-4d4b-8597-10786bcdd232___8066f325155bab752af61c4271424ea2.jpg',
-            mobileImage:
-              'https://olimpica.vtexassets.com/assets/vtex.file-manager-graphql/images/b598f58f-5d30-43d9-800b-216e9fef7608___687bd04c06b21b23e0eb692ae578776d.jpg',
-            link:
-              'https://landingjunior--olimpica.myvtex.com/31388?map=productClusterIds',
+            image: '/arquivos/BOLSOS-JUNIOR.jpg',
+            mobileImage: '/arquivos/BOLSOS-JUNIOR-B1-MB.jpg',
+            link: '/36433?map=productClusterIds&order=OrderByTopSaleDESC',
+          },
+          {
+            image: '/arquivos/JUNIO-2023-B1.jpg',
+            mobileImage: '/arquivos/JUNIOR-2023-B1-MB.jpg',
+            link: '/36435?map=productClusterIds&order=OrderByTopSaleDESC',
+          },
+          {
+            image: '/arquivos/JUNIOR-2025.jpg',
+            mobileImage: '/arquivos/JUNIOR-2025-B1-MB.jpg',
+            link: '/35163?map=productClusterIds',
           },
         ]}
       />

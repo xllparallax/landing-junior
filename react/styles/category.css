@@ -273,11 +273,11 @@
   .categoryImage {
     position: absolute;
     right: 2rem;
-    top: 50%;
+    top: 60%;
     left: auto;
     transform: translateY(-50%);
     width: auto;
-    height: 80%;
+    height: 90%;
     object-fit: contain;
   }
 

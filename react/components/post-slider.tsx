@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable vtex/prefer-early-return */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef, useState } from 'react'
 
 import styles from '../styles/post-slider.css'
@@ -27,8 +30,7 @@ export function PostSlider() {
       title:
         'Junior FC on Instagram: "📸| PRIMER ENTRENAMIENTO DEL DÍA ✅ #VamosJunior"',
       date: '02/06/25',
-      image:
-        'https://scontent.cdninstagram.com/v/t51.75761-15/502756599_18517155523044049_342359563379060770_n.jpg?stp=c216.0.648.648a_dst-jpg_e35_s640x640_tt6&_nc_cat=101&ccb=1-7&_nc_sid=18de74&_nc_ohc=ZyuuxECySXEQ7kNvwEBJme-&_nc_oc=AdkLRtPDVrFm8_DZ9vdKmyPM1jcz6wCrhA_3lgpkZt_0d7RUpwxnPowNG7yz3le5ea0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=O-Gsu9fT_7rDj35E2sPACA&oh=00_AfNjnGDsEkoNr_56Wkc5z1znl2RtGjxedegqs89yTYiKQA&oe=6847D0CC',
+      image: '/arquivos/Junior-post-2.jpg',
       description: '(Espacio para agregar descripción)',
       type: 'cheerleader',
     },

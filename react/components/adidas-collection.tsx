@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styles from '../styles/adidas-collection.css'
 
 export function AdidasCollection() {
@@ -12,10 +13,11 @@ export function AdidasCollection() {
         className={styles.goJunior}
         alt="Vamos Junior Olimpica"
         loading="lazy"
+        draggable="false"
       />
       <div className={styles.collectionContent}>
         <div className={styles.playersSection} role="presentation" />
-        <div className={styles.leftSide} role="presentation"></div>
+        <div className={styles.leftSide} role="presentation" />
         <div className={styles.infoSection}>
           <article className={styles.infoContent}>
             <h1 className={styles.collectionTitle}>

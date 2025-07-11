@@ -33,9 +33,10 @@ export function Category() {
         <a
           style={{ textDecoration: 'none' }}
           href="https://www.olimpica.com.co/28056?map=productClusterIds"
+          rel="noopener noreferrer"
           target="_blank"
           className={`${styles.categoryItem} ${styles.categoryItemRed}`}
-          role="listitem"
+          // role="listitem"
         >
           <div className={styles.categoryBg} />
           <img
@@ -52,9 +53,10 @@ export function Category() {
         <a
           style={{ textDecoration: 'none' }}
           href="https://www.olimpica.com.co/28058?map=productClusterIds"
+          rel="noopener noreferrer"
           target="_blank"
           className={`${styles.categoryItem} ${styles.categoryItemBlue}`}
-          role="listitem"
+          // role="listitem"
         >
           <div className={styles.categoryBg} />
           <img
@@ -72,7 +74,7 @@ export function Category() {
           style={{ textDecoration: 'none' }}
           href="https://www.olimpica.com.co/28057?map=productClusterIds"
           className={`${styles.categoryItem} ${styles.categoryItemRed}`}
-          role="listitem"
+          // role="listitem"
         >
           <div className={styles.categoryBg} />
           <img

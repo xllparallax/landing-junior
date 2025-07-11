@@ -44,14 +44,14 @@ export function Slider({ slides }: { slides: SlideData[] }) {
                 {/* Imagen Desktop */}
                 <img
                   src={slide.image}
-                  alt={slide.alt || `Slide ${index + 1}`}
+                  alt={slide.alt ?? `Slide ${index + 1}`}
                   className={styles.slideImageDesktop}
                 />
                 {/* Imagen Mobile */}
                 {slide.mobileImage && (
                   <img
                     src={slide.mobileImage}
-                    alt={slide.alt || `Slide ${index + 1}`}
+                    alt={slide.alt ?? `Slide ${index + 1}`}
                     className={styles.slideImageMobile}
                   />
                 )}
@@ -61,14 +61,14 @@ export function Slider({ slides }: { slides: SlideData[] }) {
                 {/* Imagen Desktop */}
                 <img
                   src={slide.image}
-                  alt={slide.alt || `Slide ${index + 1}`}
+                  alt={slide.alt ?? `Slide ${index + 1}`}
                   className={styles.slideImageDesktop}
                 />
                 {/* Imagen Mobile */}
                 {slide.mobileImage && (
                   <img
                     src={slide.mobileImage}
-                    alt={slide.alt || `Slide ${index + 1}`}
+                    alt={slide.alt ?? `Slide ${index + 1}`}
                     className={styles.slideImageMobile}
                   />
                 )}
