@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from 'react'
 
 import styles from '../styles/slider.css'
 
@@ -9,7 +10,17 @@ interface SlideData {
   alt?: string
 }
 
-export function Slider({ slides }: { slides: SlideData[] }) {
+interface SliderProps {
+  slides: SlideData[]
+  autoplay?: boolean
+  autoplayInterval?: number
+}
+
+export function Slider({
+  slides,
+  autoplay = false,
+  autoplayInterval = 6000,
+}: SliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextSlide = () => {
@@ -23,6 +34,16 @@ export function Slider({ slides }: { slides: SlideData[] }) {
       prevIndex === 0 ? slides.length - 1 : prevIndex - 1
     )
   }
+
+  useEffect(() => {
+    if (!autoplay) return
+
+    const interval = setInterval(() => {
+      nextSlide()
+    }, autoplayInterval)
+
+    return () => clearInterval(interval)
+  }, [autoplay, autoplayInterval, currentIndex])
 
   return (
     <div className={styles.sliderContainer}>
@@ -41,13 +62,11 @@ export function Slider({ slides }: { slides: SlideData[] }) {
                 rel="noopener noreferrer"
                 className={styles.slideLink}
               >
-                {/* Imagen Desktop */}
                 <img
                   src={slide.image}
                   alt={slide.alt ?? `Slide ${index + 1}`}
                   className={styles.slideImageDesktop}
                 />
-                {/* Imagen Mobile */}
                 {slide.mobileImage && (
                   <img
                     src={slide.mobileImage}
@@ -58,13 +77,11 @@ export function Slider({ slides }: { slides: SlideData[] }) {
               </a>
             ) : (
               <>
-                {/* Imagen Desktop */}
                 <img
                   src={slide.image}
                   alt={slide.alt ?? `Slide ${index + 1}`}
                   className={styles.slideImageDesktop}
                 />
-                {/* Imagen Mobile */}
                 {slide.mobileImage && (
                   <img
                     src={slide.mobileImage}

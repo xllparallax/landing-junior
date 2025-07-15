@@ -17,12 +17,12 @@ export function Category() {
         <p className={styles.categoryTitle}>
           VIVE LA <span>PASIÓN</span>
         </p>
-        <span
+        {/* <span
           className={styles.categoryDescription}
           aria-label="Descripción de la categoría"
         >
           (Espacio para agregar descripción)
-        </span>
+        </span> */}
       </div>
 
       <div
@@ -46,7 +46,7 @@ export function Category() {
             loading="lazy"
           />
           <div className={styles.categoryName}>
-            <p>HOMBRES</p>
+            <p>HOMBRE</p>
           </div>
         </a>
 
@@ -66,7 +66,7 @@ export function Category() {
             loading="lazy"
           />
           <div className={styles.categoryName}>
-            <p>NIÑOS</p>
+            <p>NIÑO</p>
           </div>
         </a>
 

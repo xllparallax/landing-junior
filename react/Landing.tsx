@@ -53,6 +53,11 @@ function Landing({ children }: { children: Props }) {
       <Slider
         slides={[
           {
+            image: '/arquivos/JUNIOR-2025.jpg',
+            mobileImage: '/arquivos/JUNIOR-2025-B1-MB.jpg',
+            link: '/35163?map=productClusterIds',
+          },
+          {
             image: '/arquivos/ACCESORIOS PRINC.jpg',
             mobileImage: '/arquivos/ACCESORIOS MB.jpg',
             link: '/35166?map=productClusterIds&order=OrderByTopSaleDESC',
@@ -67,12 +72,8 @@ function Landing({ children }: { children: Props }) {
             mobileImage: '/arquivos/JUNIOR-2023-B1-MB.jpg',
             link: '/36435?map=productClusterIds&order=OrderByTopSaleDESC',
           },
-          {
-            image: '/arquivos/JUNIOR-2025.jpg',
-            mobileImage: '/arquivos/JUNIOR-2025-B1-MB.jpg',
-            link: '/35163?map=productClusterIds',
-          },
         ]}
+        autoplay
       />
       {isMobile && (
         <>

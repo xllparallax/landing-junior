@@ -190,6 +190,18 @@
     width: 15rem;
     height: 18rem;
   }
+
+  .categoryItemRed .categoryName:hover {
+    border: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .categoryItemBlue .categoryName:hover {
+    border: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 }
 
 /* Mobile styles */
